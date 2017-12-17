@@ -1,0 +1,15 @@
+<hr>
+<div ng-show="!$ctrl.movie.editMode">
+  Name: {{$ctrl.movie.name}}<br>
+  Year: {{$ctrl.movie.year}}<br>
+  Imdb: {{$ctrl.movie.imdb}}<br>
+  <button ng-click="$ctrl.delete()">Delete</button>
+  <button ng-click="$ctrl.update()">Update</button>
+</div>
+<div ng-show="$ctrl.movie.editMode">
+  Name:  <input type="text" ng-model="$ctrl.movie.name"/><br>
+  Year:  <input type="text" ng-model="$ctrl.movie.year"/><br>
+  Imdb:  <input type="text" ng-model="$ctrl.movie.imdb"/><br>
+  <button ng-click="$ctrl.save()">Save</button>
+  <button ng-click="$ctrl.cancel()">Cancel</button>	
+</div>

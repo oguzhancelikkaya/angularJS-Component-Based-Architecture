@@ -1,0 +1,3 @@
+<b>Movies</b><br>
+<movie-detail ng-repeat="movie in $ctrl.list" movie="movie" on-delete="$ctrl.deleteMovie(movie)" on-update="$ctrl.updateMovie(movie)" on-cancel="$ctrl.cancelMovie(movie, movieCopy)" on-save="$ctrl.saveMovie(movie, newmovie)"></movie-detail>
+
