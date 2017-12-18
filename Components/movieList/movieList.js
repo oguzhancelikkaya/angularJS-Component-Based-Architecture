@@ -1,27 +1,8 @@
-function MovieListController($scope, $element, $attrs) {
+function MovieListController($scope, $element, $attrs, $rootScope) {
   var ctrl = this;
 
-  ctrl.list = [
-    {
-      id: '1',
-      name: 'Back to the Future',
-      year: '1985',
-	    imdb: '8,5'
-    },
-    {
-	  id: '2',		
-      name: 'The Dark Night',
-      year: '2008',
-      imdb: '9,0'
-    },
-    {
-	  id: '3',	
-      name: 'Eternal Sunshine of the Spotless Mind',
-      year: '2004',
-      imdb: '8,3'
-    }
-	
-  ];
+	ctrl.list = $rootScope.list;
+  
   
   ctrl.deleteMovie = function(movie) {
     var idx = ctrl.list.indexOf(movie);

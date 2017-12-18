@@ -1,2 +1,7 @@
 <b>Add Movie</b><br>
-
+<hr>
+<span>Name: </span><input type="text" placeholder="Name" ng-model="$ctrl.name" /> <br/>
+<span>Year: </span><input type="text" placeholder="Year" ng-model="$ctrl.year" /> <br/>
+<span>Imdb: </span><input type="text" placeholder="Imdb" ng-model="$ctrl.imdb" /> <br/>
+<button ng-click="$ctrl.saveMovie()">Save</button>
+<button ng-click="$ctrl.resetMovie()">Reset</button>

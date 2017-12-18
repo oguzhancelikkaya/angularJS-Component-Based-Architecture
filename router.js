@@ -17,3 +17,26 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 
 
 });
+routerApp.run(function($rootScope) {
+	$rootScope.list = [
+		{
+			id: '1',
+			name: 'Back to the Future',
+			year: '1985',
+			imdb: '8,5'
+		},
+		{
+			id: '2',		
+			name: 'The Dark Night',
+			year: '2008',
+			imdb: '9,0'
+		},
+		{
+			id: '3',	
+			name: 'Eternal Sunshine of the Spotless Mind',
+			year: '2004',
+			imdb: '8,3'
+		}
+		
+	];
+});
