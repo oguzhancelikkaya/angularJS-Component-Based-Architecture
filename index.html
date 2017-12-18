@@ -14,6 +14,7 @@
   <title>AngularJS Component Based Architecture - Movie Application</title>
   <!-- LIBRARIES -->
   <script src="https://code.angularjs.org/snapshot/angular.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- STYLE / THEME -->
@@ -22,11 +23,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css"/>
   <!-- THIS APP. -->
   <script src="index.js"></script>
+  <script src="router.js"></script>
   <script src="Components/movieList/movieList.js"></script>
   <script src="Components/movieDetail/movieDetail.js"></script>
+  <script src="Components/movieAdd/movieAdd.js"></script>
+  <script src="Components/navbar/navbar.js"></script>
+  
 </head>
 <body ng-app="movieApp">
-  <movie-list></movie-list>
+
+	<navbar></navbar>
+	<div ui-view></div>
+  
 </body>
 </html>
 

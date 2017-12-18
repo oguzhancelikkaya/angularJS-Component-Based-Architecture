@@ -2,7 +2,7 @@ function MovieDetailController($scope) {
   var ctrl = this;
 
   ctrl.$onInit = function() {
-    ctrl.movieCopy = JSON.parse(JSON.stringify(ctrl.movie));
+    ctrl.movieCopy = angular.copy(ctrl.movie);
   }
 
   ctrl.delete = function() {
@@ -10,7 +10,7 @@ function MovieDetailController($scope) {
   };
 
   ctrl.update = function() {
-    ctrl.movieCopy = JSON.parse(JSON.stringify(ctrl.movie));
+    ctrl.movieCopy = angular.copy(ctrl.movie);
     ctrl.onUpdate({movie: ctrl.movie});
   };
 
