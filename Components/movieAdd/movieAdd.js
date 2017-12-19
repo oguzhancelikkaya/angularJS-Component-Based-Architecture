@@ -1,4 +1,4 @@
-function MovieAddController($scope, $element, $attrs, $rootScope, $state, toaster) {
+function MovieAddController($scope, $element, $attrs, $rootScope, $state, toaster, helperUtils) {
   var ctrl = this;
   
   ctrl.name = "";
@@ -8,14 +8,19 @@ function MovieAddController($scope, $element, $attrs, $rootScope, $state, toaste
   ctrl.list = $rootScope.list;
   
   ctrl.saveMovie = function() {
-	var listlength = ctrl.list.length;
-	ctrl.list[listlength] = {}
-	ctrl.list[listlength].id   = listlength + 1;
-	ctrl.list[listlength].name = ctrl.name;
-	ctrl.list[listlength].year = ctrl.year;
-	ctrl.list[listlength].imdb = ctrl.imdb;
-	ctrl.resetMovie('reset');
-	toaster.pop({type: 'success',title: 'Added',body: 'Movie has been added',bodyOutputType: 'trustedHtml',timeout: 3000,showCloseButton: true});
+	if(helperUtils.isNotEmpty(ctrl.name)){
+		var listlength = ctrl.list.length;
+		ctrl.list[listlength] = {}
+		ctrl.list[listlength].id   = listlength + 1;
+		ctrl.list[listlength].name = ctrl.name;
+		ctrl.list[listlength].year = ctrl.year;
+		ctrl.list[listlength].imdb = ctrl.imdb;
+		ctrl.resetMovie('reset');
+		toaster.pop({type: 'success',title: 'Added',body: 'Movie has been added',bodyOutputType: 'trustedHtml',timeout: 3000,showCloseButton: true});
+	}
+	else{
+		toaster.pop({type: 'warning',title: 'Empty',body: 'Movie name cannot be empty',bodyOutputType: 'trustedHtml',timeout: 3000,showCloseButton: true});
+	}
   };
 
   ctrl.resetMovie = function(resetcase) {
