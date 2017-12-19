@@ -1,0 +1,9 @@
+<b>Search Movie</b><br>
+<hr>
+<span>Name: </span><input type="text" placeholder="Name" ng-model="$ctrl.name" /> <br/>
+<span>Year: </span><input type="text" placeholder="Year" ng-model="$ctrl.year" /> <br/>
+<span>Imdb: </span><input type="text" placeholder="Imdb" ng-model="$ctrl.imdb" /> <br/>
+<button ng-click="$ctrl.searchMovie()">Search</button>
+<button ng-click="$ctrl.resetParams()">Reset</button>
+
+<div ui-view></div>

@@ -10,8 +10,15 @@ movieApp.config(function($stateProvider, $urlRouterProvider) {
 		.state('movieadd', {
             url: '/movie-add',
             component: 'movieAdd'
-        });
-
+        })
+		.state('moviesearch', {
+            url: '/movie-search',	
+            component: 'movieSearch'
+        })
+		.state('moviesearch.list', {
+          url: '/list?:name:&year:&imdb',
+          component: 'movieSearchList'
+        })
 
 });
 movieApp.run(function($rootScope) {
