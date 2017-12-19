@@ -24,7 +24,7 @@ function MovieDetailController($scope) {
 
 }
 
-angular.module('movieApp').component('movieDetail', {
+movieApp.component('movieDetail', {
   templateUrl: 'Components/movieDetail/movieDetail.html',
   controller: MovieDetailController,
   bindings: {

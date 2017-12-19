@@ -13,14 +13,17 @@
   <meta name="author" content=""/>
   <title>AngularJS Component Based Architecture - Movie Application</title>
   <!-- LIBRARIES -->
-  <script src="https://code.angularjs.org/snapshot/angular.min.js"></script> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.angularjs.org/snapshot/angular.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/1.1.0/toaster.min.js"></script> 
   <!-- STYLE / THEME -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.min.css"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/1.1.0/toaster.min.css" rel="stylesheet" />
   <!-- THIS APP. -->
   <script src="index.js"></script>
   <script src="router.js"></script>
@@ -28,10 +31,12 @@
   <script src="Components/movieDetail/movieDetail.js"></script>
   <script src="Components/movieAdd/movieAdd.js"></script>
   <script src="Components/navbar/navbar.js"></script>
+  <style>:not(.no-enter)#toast-container > div.ng-enter,:not(.no-leave)#toast-container > div.ng-leave{transition-duration: .2s !important;}</style>
 </head>
 <body ng-app="movieApp">
 	
 	<navbar></navbar>
+	<toaster-container></toaster-container>
 	<div class="container-fluid">
 		<div ui-view></div>
 	</div>

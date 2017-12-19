@@ -1,7 +1,4 @@
-
-var routerApp = angular.module('movieApp', ['ui.router']);
-
-routerApp.config(function($stateProvider, $urlRouterProvider) {
+movieApp.config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/movie-list');
 
@@ -17,7 +14,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 
 
 });
-routerApp.run(function($rootScope) {
+movieApp.run(function($rootScope) {
 	$rootScope.list = [
 		{
 			id: '1',

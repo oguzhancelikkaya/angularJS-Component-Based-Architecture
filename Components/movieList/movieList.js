@@ -1,7 +1,7 @@
-function MovieListController($scope, $element, $attrs, $rootScope) {
+function MovieListController($scope, $element, $attrs, $rootScope, toaster) {
   var ctrl = this;
 
-	ctrl.list = $rootScope.list;
+  ctrl.list = $rootScope.list;
   
   
   ctrl.deleteMovie = function(movie) {
@@ -9,6 +9,7 @@ function MovieListController($scope, $element, $attrs, $rootScope) {
     if (idx >= 0) {
       ctrl.list.splice(idx, 1);
     }
+	toaster.pop({type: 'success',title: 'Deleted',body: 'Movie has been deleted',bodyOutputType: 'trustedHtml',timeout: 3000,showCloseButton: true});
   };
 
   ctrl.updateMovie = function(movie) {
@@ -31,11 +32,12 @@ function MovieListController($scope, $element, $attrs, $rootScope) {
     if (idx >= 0) {
       ctrl.list[idx].editMode = false;
     }
+	toaster.pop({type: 'success',title: 'Updated',body: 'Movie has been updated',bodyOutputType: 'trustedHtml',timeout: 3000,showCloseButton: true});
   };  
   
 }
 
-angular.module('movieApp').component('movieList', {
+movieApp.component('movieList', {
   templateUrl: 'Components/movieList/movieList.html',
   controller: MovieListController
 });

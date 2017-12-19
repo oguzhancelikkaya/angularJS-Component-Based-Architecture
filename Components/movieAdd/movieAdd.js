@@ -1,4 +1,4 @@
-function MovieAddController($scope, $element, $attrs, $rootScope, $state) {
+function MovieAddController($scope, $element, $attrs, $rootScope, $state, toaster) {
   var ctrl = this;
   
   ctrl.name = "";
@@ -15,6 +15,7 @@ function MovieAddController($scope, $element, $attrs, $rootScope, $state) {
 	ctrl.list[listlength].year = ctrl.year;
 	ctrl.list[listlength].imdb = ctrl.imdb;
 	ctrl.resetMovie('reset');
+	toaster.pop({type: 'success',title: 'Added',body: 'Movie has been added',bodyOutputType: 'trustedHtml',timeout: 3000,showCloseButton: true});
   };
 
   ctrl.resetMovie = function(resetcase) {
@@ -27,7 +28,7 @@ function MovieAddController($scope, $element, $attrs, $rootScope, $state) {
   };
 }
 
-angular.module('movieApp').component('movieAdd', {
+movieApp.component('movieAdd', {
   templateUrl: 'Components/movieAdd/movieAdd.html',
   controller: MovieAddController
 });
